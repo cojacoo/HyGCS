@@ -4,32 +4,35 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Documentation Status](https://readthedocs.org/projects/hygcs/badge/?version=latest)](https://hygcs.readthedocs.io/en/latest/?badge=latest)
 
-A comprehensive Python toolkit for hysteresis analysis and geochemical phase classification in concentration-discharge (C-Q) relationships.
+A comprehensive Python toolkit for hysteresis analysis and hydrogeochemical phase classification in concentration-discharge (C-Q) relationships.
 
-Developed for analyzing water quality dynamics in catchments, mine drainage systems, and environmental monitoring networks.
+Developed for analyzing water quality dynamics in catchments, mine drainage systems, and environmental monitoring networks. The tool is inspired by [Knapp and Musloff (2024)](https://doi.org/10.1002/hyp.15328) to ease the application of C-Q metrics for complementary analyses towards more comprehensive ecohydrological analyses.
+
+(cc-by) Conrad Jackisch and Anita Sanchez, TU Bergakademie Freiberg, Interdisciplinary Environmental Research Centre, Germany
+*Parts of the code have been interactively checked and amended by using Claude Code Sonnet 4.5*
 
 ---
 
 ## Key Features
 
 **Multi-Method Hysteresis Analysis**
-- HARP (Roberts et al., 2023) - Empirical classification based on peak timing and loop geometry
-- Zuecco Index (Zuecco et al., 2016) - Integration-based index with 9-class classification
-- Lloyd/Lawler (Lloyd et al., 2016) - Percentile-based indices with symmetric range
+- HARP [(Roberts et al. 2023)](https://doi.org/10.1016/j.jhydrol.2023.130262) - Empirical classification based on peak timing and loop geometry
+- Zuecco Index [(Zuecco et al. 2016)](https://doi.org/10.1002/hyp.10681) - Integration-based index with 9-class classification
+- Lloyd/Lawler [(Lloyd et al. 2016)](https://doi.org/10.5194/hess-20-625-2016)/[Lawler et al., 2006](https://doi.org/10.1016/j.scitotenv.2005.08.032) - Percentile-based indices with symmetric range
 
 **CVc/CVq Variability Analysis**
-- Coefficient of variation ratios (Musolff et al., 2015)
-- Chemostatic vs. chemodynamic behavior detection
+- Coefficient of variation ratios [(Musolff et al. 2015)](https://doi.org/10.1016/j.advwatres.2015.09.026)
+- Chemostatic vs. chemodynamic behavior detection [(Godsey et al. 2009)](https://doi.org/10.1002/hyp.7315)
 - Rolling window analysis for temporal dynamics
 
 **C-Q Slope Analysis**
-- Power-law exponent calculation (C = aQ^b)
+- Power-law exponent calculation (C = aQ^b) [(Thompson et al. 2011)](https://doi.org/10.1029/2010WR009605)
 - Log-log regression for mechanistic interpretation
 - Connectivity and transport process identification
 
-**Geochemical Phase Classification**
+**Hierarchical Geochemical Phase Classification**
 
-6-phase hierarchical classification system:
+Above indexes 6-phase classification system:
 - F (Flushing): Dilution-dominated, steep C decline during high Q
 - L (Loading): Enrichment, C increase before peak Q
 - C (Chemostatic): Buffered, low variability, flat C-Q slope
@@ -37,7 +40,7 @@ Developed for analyzing water quality dynamics in catchments, mine drainage syst
 - R (Recession): Late cycle, low connectivity
 - V (Variable): Ambiguous/mixed patterns
 
-**Comprehensive Visualization**
+**Visualization**
 - Phase sequence timelines
 - C-Q hysteresis loops with phase coloring
 - Diagnostic plots (CVc/CVq vs. C-Q slope)
@@ -48,7 +51,7 @@ Developed for analyzing water quality dynamics in catchments, mine drainage syst
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/HyGCS.git
+git clone https://github.com/cojacoo/HyGCS.git
 cd HyGCS
 pip install -e .
 ```
@@ -92,7 +95,7 @@ pcd['date'] = pd.to_datetime(pcd['date'])
 classified = gcs.classify_geochemical_phase(
     pcd,
     sites=['Site1', 'Site2'],
-    ccol='PLI',
+    ccol='Zn_mgL',
     qcol='Q_mLs',
     use_highres=False
 )
@@ -138,49 +141,6 @@ Full documentation is available at: **https://hygcs.readthedocs.io/**
 
 ---
 
-## Scientific Background
-
-**Hysteresis Methods**
-
-- HARP (Roberts et al., 2023) - Empirical classification based on peak timing
-- Zuecco Index (Zuecco et al., 2016) - Integration-based index with 9-class system
-- Lloyd/Lawler (Lloyd et al., 2016; Lawler et al., 2006) - Percentile-based indices
-
-**CVc/CVq Framework**
-
-- Musolff et al. (2015) - Coefficient of variation approach
-- CVc/CVq > 1: Chemodynamic; CVc/CVq < 1: Chemostatic
-
-**C-Q Relationships**
-
-- Thompson et al. (2011) - Power-law exponent interpretation
-- b > 0: Dilution/flushing; b < 0: Enrichment/loading; b ≈ 0: Chemostatic
-
-**Critical Perspective**
-
-- Knapp & Musolff (2024) - Multi-method validation and contextual interpretation required
-
----
-
-## License
-
-This work is licensed under a Creative Commons Attribution 4.0 International License (CC-BY 4.0).
-
-You are free to share and adapt this work with appropriate attribution.
-
----
-
-## Authors
-
-- Conrad Jackisch - conrad.jackisch@tbt.tu-freiberg.de
-- Anita Sanchez - antita.sanchez@mineral.tu-freiberg.de
-
-TU Bergakademie Freiberg, Interdisciplinary Environmental Research Centre, Germany
-
-*Parts of the code have been interactively checked and amended by using Claude Code Sonnet 4.5*
-
----
-
 ## Citation
 
 If you use HyGCS in your research, please cite:
@@ -191,7 +151,7 @@ If you use HyGCS in your research, please cite:
   title = {HyGCS: Hydro-Geochemical Classification Suite},
   year = {2025},
   version = {0.5},
-  url = {https://github.com/yourusername/HyGCS}
+  url = {https://github.com/cojacoo/HyGCS}
 }
 ```
 
@@ -219,7 +179,7 @@ This code is scientific and experimental. Do not trust results without thorough 
 
 The package contains assumptions (e.g., time series in days, spline interpolations) that may not suit all use cases. Always validate against known reference events, compare multiple methods for convergent evidence, and consider site-specific context.
 
-When methods disagree, investigate further.
+When methods disagree, investigate further. If you find bugs, odd implementations or even errors in the scientific basis of the code, please raise a [GitHub Issues](https://github.com/cojacoo/HyGCS/issues).
 
 ---
 

@@ -568,37 +568,49 @@ def create_multi_compound_hysteresis_plot(data: pd.DataFrame,
 
 
 def _add_diagnostic_scatter(fig: go.Figure,
-                           phase_data: pd.DataFrame,
-                           x_col: str,
-                           y_col: str,
-                           phase: str,
-                           row: int,
-                           col: int,
-                           symbol: str = 'circle',
-                           opacity: float = 1.0,
-                           size: int = 8,
-                           show_legend: bool = True) -> None:
-    """Helper to add diagnostic scatter trace (avoid duplication)."""
-    fig.add_trace(
-        go.Scatter(
-            x=phase_data[x_col],
-            y=phase_data[y_col],
-            mode='markers',
-            marker=dict(
-                size=size,
-                color=phase_colors.get(phase, 'gray'),
-                symbol=symbol,
-                opacity=opacity,
-                line=dict(width=1 if symbol == 'circle' else 2,
-                         color='white' if symbol == 'circle' else phase_colors.get(phase, 'gray'))
-            ),
-            name=phase_names.get(phase, phase) if show_legend else f'{phase} (unlabeled)',
-            legendgroup=phase,
-            showlegend=show_legend
-        ),
-        row=row, col=col
-    )
+                             phase_data: pd.DataFrame,
+                             x_col: str,
+                             y_col: str,
+                             phase: str,
+                             row: int,
+                             col: int,
+                             symbol: str = 'circle',
+                             opacity: float = 1.0,
+                             size: int = 8,
+                             show_legend: bool = True) -> None:
+      """Helper to add diagnostic scatter trace (avoid duplication)."""
 
+      # Prepare custom data for hover (site_id, compound, start_date, segment_id)
+      customdata = phase_data[['site_id', 'compound', 'start_date', 'segment_id']].values
+
+      fig.add_trace(
+          go.Scatter(
+              x=phase_data[x_col],
+              y=phase_data[y_col],
+              mode='markers',
+              marker=dict(
+                  size=size,
+                  color=phase_colors.get(phase, 'gray'),
+                  symbol=symbol,
+                  opacity=opacity,
+                  line=dict(width=1 if symbol == 'circle' else 2,
+                           color='white' if symbol == 'circle' else phase_colors.get(phase, 'gray'))
+              ),
+              name=phase_names.get(phase, phase) if show_legend else f'{phase} (unlabeled)',
+              customdata=customdata,
+              hovertemplate=
+              "<b>%{customdata[0]}</b><br><br>" +
+              "compound: %{customdata[1]}<br>" +
+              "start: %{customdata[2]}<br>" +
+              "segment: %{customdata[3]}<br>" +
+              f"{x_col}: " + "%{x:.3f}<br>" +
+              f"{y_col}: " + "%{y:.3f}<br>" +
+              "<extra></extra>",
+              legendgroup=phase,
+              showlegend=show_legend
+          ),
+          row=row, col=col
+      )
 
 def create_diagnostic_plot(results: pd.DataFrame,
                           manual_labels: Optional[pd.DataFrame] = None,
