@@ -16,7 +16,10 @@ License: CC-BY 4.0
 Version: 0.5
 """
 
-from .gcs_v5 import *
+import sys
+sys.path.append('.')
+
+from .gcs import *
 
 __version__ = '0.5'
 __author__ = 'Conrad Jackisch, Anita Sanchez'

@@ -35,9 +35,8 @@ HyGCS/
 └── PACKAGE_CONTENTS.md            # This file
 ```
 
----
 
-## 🔧 Core Package Components
+## Core Package Components
 
 ### `hygcs/gcs_v5.py` - Main Module
 - Package entry point
@@ -78,34 +77,18 @@ HyGCS/
 - `calculate_lawlerlloyd_metrics()` - Lloyd/Lawler indices
 - `lloyd_plot()` - Visualization
 
----
 
-## 📚 Documentation Files
+
+## Documentation Files
 
 ### Main Documentation
 - **README.md** - Complete package overview, installation, usage examples
 - **GETTING_STARTED.md** - Quick start guide for new users
 - **LICENSE** - CC-BY 4.0 International License
+- **Technical Documentation** as ReadTheDocs under `docs/`
 
-### Technical Documentation (`docs/`)
-- **RESTRUCTURING_v0.5.md** - Package reorganization from v4 to v0.5
-  - Eliminated `gcs_analysis.py`
-  - Function renaming for clarity
-  - Moved classification functions
-  - Warning suppression added
 
-- **VISUALIZATION_LINE_STYLE_UPDATE.md** - Classifier-based line styles
-  - HI-based dash patterns (solid/dashed/dotted)
-  - Method-specific rules (Zuecco/Lloyd/HARP)
-  - Fixes for thickness and style issues
-
-- **IMPORT_FIX.md** - Troubleshooting import errors
-  - Python cache issues
-  - Solutions for `cannot import` errors
-
----
-
-## 🧪 Examples & Tests
+##  Examples & Tests
 
 ### Examples (`examples/`)
 
@@ -123,23 +106,8 @@ HyGCS/
    - Diagnostic plots
    - **Focus**: GCS time series classification
 
-### Tests (`tests/`)
-
-1. **test_imports_v05.py**
-   - Comprehensive import coherency test
-   - Verifies all 8 test categories:
-     - Main module import
-     - Core functions (5)
-     - Classification functions (3)
-     - Visualization functions (4+)
-     - Hysteresis methods (3)
-     - Direct submodule imports
-     - Old function names removed
-     - Version check
-
----
-
-## 🔬 Scientific Methods Implemented
+### 
+## Scientific Methods Implemented
 
 ### Hysteresis Analysis
 1. **HARP** (Roberts et al., 2023)
@@ -173,9 +141,8 @@ HyGCS/
    - C-Q slope integration
    - Percentile-based thresholds
 
----
 
-## 📋 Dependencies
+## Dependencies
 
 ### Core Requirements
 - pandas >= 1.3.0
@@ -190,9 +157,8 @@ HyGCS/
 - ipywidgets >= 7.6.0
 - openpyxl >= 3.0.0
 
----
 
-## 📊 Data Format Requirements
+## Data Format Requirements
 
 ### Single Event Analysis
 ```
@@ -221,9 +187,8 @@ Minimum: 20-30 points per site
 Recommended: 50+ points covering multiple cycles
 ```
 
----
 
-## 🎯 Use Cases
+## Intentended Use Cases
 
 1. **Mine Drainage Monitoring**
    - Legacy mine water quality analysis
@@ -245,9 +210,8 @@ Recommended: 50+ points covering multiple cycles
    - Multi-compound comparisons
    - Method validation studies
 
----
 
-## 🔄 Version History
+## Version History
 
 ### v0.5 (December 2025) - Current
 - Package restructuring for maintainability
@@ -266,7 +230,7 @@ Recommended: 50+ points covering multiple cycles
 
 ---
 
-## 📝 Citation
+##  Citation
 
 ```bibtex
 @software{hygcs2025,
@@ -274,27 +238,27 @@ Recommended: 50+ points covering multiple cycles
   title = {HyGCS: Hydro-Geochemical Classification Suite},
   year = {2025},
   version = {0.5},
-  url = {https://github.com/yourusername/HyGCS}
+  url = {https://github.com/cojacoo/HyGCS}
 }
 ```
 
----
 
-## 👥 Contributors
+
+## Contributors
 
 - **Conrad Jackisch** - conrad.jackisch@tbt.tu-freiberg.de
 - **Anita Sanchez** - antita.sanchez@mineral.tu-freiberg.de
 
-*TU Bergakademie Freiberg, Germany*
+*TU Bergakademie Freiberg, Interdisciplinary Ecological Centre, Germany*
 
----
 
-## 📧 Support
+
+## Support
 
 - **Issues**: GitHub Issues
 - **Email**: conrad.jackisch@tbt.tu-freiberg.de
 - **Documentation**: See `docs/` directory and `GETTING_STARTED.md`
 
----
 
-*Last updated: December 2025*
+
+*Last updated: January 2026*

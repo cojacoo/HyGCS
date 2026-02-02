@@ -11,7 +11,7 @@ setup(
     description="Hydro-Geochemical Classification Suite for C-Q hysteresis analysis",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/HyGCS",
+    url="https://github.com/cojacoo/HyGCS",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -53,7 +53,7 @@ setup(
     },
     keywords="hydrology geochemistry hysteresis C-Q concentration-discharge water-quality",
     project_urls={
-        "Bug Reports": "https://github.com/yourusername/HyGCS/issues",
-        "Source": "https://github.com/yourusername/HyGCS",
+        "Bug Reports": "https://github.com/cojacoo/HyGCS/issues",
+        "Source": "https://github.com/cojacoo/HyGCS",
     },
 )

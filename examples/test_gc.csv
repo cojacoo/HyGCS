@@ -1,4 +1,4 @@
-Sample_ID,campaign,site_id,EC,pH,level_num,doc_mgL,dic_mgL,date,Mn_mgL,Ni_mgL,As_mgL,Cd_mgL,Pb_mgL,Fe_mgL,Al_mgL,Cu_mgL,Zn_mgL,Q_mLs,PLI,Event,HydPhase,site_idx
+Sample_ID,campaign,site_id,EC,pH,level_num,doc_mgL,dic_mgL,date,Mn_mgL,Ni_mgL,As_mgL,Cd_mgL,Pb_mgL,Fe_mgL,Al_mgL,Cu_mgL,Zn_mgL,Q_mLs,PLI,Event,HydPhase,site_id
 C4_07,7,C4,307,5.9,1,1.303,0.5743,2022-05-12,0.04406,0.01058,0.1,0.01065,0.0528,0.003,0.02416,0.01509,1.329,263.98,13.63,"Decline, Year 1",declining,Site 1
 A12_07,7,A12,463,3.6,2,1.612,0.6773,2022-05-12,0.6278,0.01848,0.1,0.08379,0.9565,2.062,1.419,0.2231,8.893,138.66,152.13,"Decline, Year 1",declining,Site 2
 B3_07,7,B3,605,3.23,3,1.232,0.963,2022-05-12,1.53,0.02505,0.1,0.1796,1.232,1.502,2.933,0.5301,17.44,223.96,233.64,"Decline, Year 1",declining,Site 3B

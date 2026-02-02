@@ -11,9 +11,12 @@ in water systems.
 # =============================================================================
 # IMPORTS FROM SUBMODULES
 # =============================================================================
+import sys
+sys.path.append('./')
+
 
 # Core metrics and preparatory functions
-from gcs_core import (
+from .gcs_core import (
     calculate_all_hysteresis_metrics,
     compute_cvc_cvq_windows,
     compute_cq_slope,
@@ -22,14 +25,14 @@ from gcs_core import (
 )
 
 # Classification functions (MAIN API)
-from gcs_classification import (
+from .gcs_classification import (
     classify_geochemical_phase,
     classify_segment_phase,
     classify_cq_behavior_simple
 )
 
 # Visualization
-from gcs_visualization import (
+from .gcs_visualization import (
     phase_colors,
     phase_names,
     hyphase_colors,
@@ -44,14 +47,14 @@ from gcs_visualization import (
 )
 
 # Individual hysteresis modules (for direct access if needed)
-from harp import calculate_harp_metrics
-from zuecco import calculate_zuecco_metrics
-from lloyd import calculate_lawlerlloyd_metrics
+from .harp import calculate_harp_metrics
+from .zuecco import calculate_zuecco_metrics
+from .lloyd import calculate_lawlerlloyd_metrics
 
 # Re-export plotting from individual modules
-from harp import harp_plot
-from zuecco import zuecco_plot
-from lloyd import lloyd_plot
+from .harp import harp_plot
+from .zuecco import zuecco_plot
+from .lloyd import lloyd_plot
 
 # =============================================================================
 # MODULE METADATA

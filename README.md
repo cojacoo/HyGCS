@@ -11,7 +11,7 @@ Developed for analyzing water quality dynamics in catchments, mine drainage syst
 (cc-by) Conrad Jackisch and Anita Sanchez, TU Bergakademie Freiberg, Interdisciplinary Environmental Research Centre, Germany
 *Parts of the code have been interactively checked and amended by using Claude Code Sonnet 4.5*
 
----
+
 
 ## Key Features
 
@@ -46,7 +46,7 @@ Above indexes 6-phase classification system:
 - Diagnostic plots (CVc/CVq vs. C-Q slope)
 - Multi-compound comparison plots
 
----
+
 
 ## Installation
 
@@ -58,7 +58,7 @@ pip install -e .
 
 Requirements: Python >= 3.8, pandas, numpy, scipy, plotly, scikit-learn, statsmodels
 
----
+
 
 ## Quick Start
 
@@ -105,7 +105,7 @@ fig = gcs.create_phase_sequence_plot(classified, sites=['Site1'])
 fig.show()
 ```
 
----
+
 
 ## Package Structure
 
@@ -126,7 +126,7 @@ HyGCS/
 └── setup.py
 ```
 
----
+
 
 ## Documentation
 
@@ -161,7 +161,7 @@ And the relevant methodology papers:
 - Lloyd, C.E.M. et al. (2016) - Lloyd/Lawler indices
 - Musolff, A. et al. (2015) - CVc/CVq framework
 
----
+
 
 ## Acknowledgments
 
@@ -169,19 +169,15 @@ This package integrates and extends methods from:
 - [HARP R package](https://github.com/MelanieEmmajade/HARP) by Melanie Roberts
 - [Hysteresis-Index-Zuecco](https://github.com/florianjehn/Hysteresis-Index-Zuecco) by Florian Jehn
 
-Built with support from the mine drainage monitoring network at TU Bergakademie Freiberg.
+Built with data impossible to without the support from the mine drainage monitoring network at TU Bergakademie Freiberg and its Research Mine "Reiche Zeche".
 
----
+
 
 ## Disclaimer
 
-This code is scientific and experimental. Do not trust results without thorough validation.
+**This code is scientific and experimental. Do not trust results without thorough validation.** The package contains assumptions (e.g., time series in days, spline interpolations) that may not suit all use cases. Always validate against known reference events, compare multiple methods for convergent evidence, and consider site-specific context. When methods disagree, investigate further. If you find bugs, odd implementations or even errors in the scientific basis of the code, please raise an [issue](https://github.com/cojacoo/HyGCS/issues).
 
-The package contains assumptions (e.g., time series in days, spline interpolations) that may not suit all use cases. Always validate against known reference events, compare multiple methods for convergent evidence, and consider site-specific context.
 
-When methods disagree, investigate further. If you find bugs, odd implementations or even errors in the scientific basis of the code, please raise a [GitHub Issues](https://github.com/cojacoo/HyGCS/issues).
-
----
 
 ## Contact
 
@@ -189,6 +185,6 @@ For questions, issues, or collaboration:
 - Email: conrad.jackisch@tbt.tu-freiberg.de
 - Issues: [GitHub Issues](https://github.com/cojacoo/HyGCS/issues)
 
----
+
 
 *Version 0.5 - December 2025*

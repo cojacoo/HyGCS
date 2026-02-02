@@ -14,9 +14,9 @@ from typing import Tuple, Dict, List, Optional
 import warnings
 
 # Import individual hysteresis analysis modules
-from harp import calculate_harp_metrics
-from zuecco import calculate_zuecco_metrics
-from lloyd import calculate_lawlerlloyd_metrics
+from .harp import calculate_harp_metrics
+from .zuecco import calculate_zuecco_metrics
+from .lloyd import calculate_lawlerlloyd_metrics
 
 
 # =============================================================================

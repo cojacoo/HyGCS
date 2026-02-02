@@ -29,7 +29,7 @@ import numpy as np
 from typing import List, Tuple, Dict, Optional
 
 # Import from core module (renamed functions in v0.5)
-from gcs_core import (
+from .gcs_core import (
     compute_cvc_cvq_windows,
     compute_cq_slope,
     analyze_segment_flow_dynamics,

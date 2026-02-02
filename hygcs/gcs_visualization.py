@@ -14,7 +14,7 @@ from typing import List, Optional, Dict
 import warnings
 
 # Import classification function for multi-compound plots
-from gcs_classification import classify_geochemical_phase
+from .gcs_classification import classify_geochemical_phase
 
 # =============================================================================
 # COLOR SCHEMES (V4 ORIGINAL)

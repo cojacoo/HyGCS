@@ -1,6 +1,6 @@
-# ReadTheDocs Documentation Setup - Complete
+# ReadTheDocs Documentation Setup
 
-This document explains the ReadTheDocs documentation setup for HyGCS.
+This document explains the ReadTheDocs documentation setup for HyGCS. This has been semiautomatically created from the code base.
 
 ## ✅ What Has Been Created
 
