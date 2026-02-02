@@ -151,7 +151,8 @@ If you use HyGCS in your research, please cite:
   title = {HyGCS: Hydro-Geochemical Classification Suite},
   year = {2025},
   version = {0.5},
-  url = {https://github.com/cojacoo/HyGCS}
+  url = {https://github.com/cojacoo/HyGCS},
+  doi = {https://doi.org/10.5281/zenodo.18462821}
 }
 ```
 

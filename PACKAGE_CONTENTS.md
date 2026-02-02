@@ -87,12 +87,33 @@ HyGCS/
 - **LICENSE** - CC-BY 4.0 International License
 - **Technical Documentation** as ReadTheDocs under `docs/`
 
+### ReadTheDocs
+All documentation can be found in the `docs/` directory:
+
+| File | Purpose |
+|------|---------|
+| `conf.py` | Sphinx configuration (theme, extensions, autodoc settings) |
+| `index.rst` | Main documentation page |
+| `installation.rst` | Installation instructions and requirements |
+| `quickstart.rst` | Quick start tutorial with examples |
+| `examples.rst` | Guide to example Jupyter notebooks |
+| `scientific_background.rst` | Detailed methodology and scientific basis |
+| `api_core.rst` | Core analysis functions API reference |
+| `api_classification.rst` | Classification functions API reference |
+| `api_visualization.rst` | Visualization functions API reference |
+| `api_hysteresis.rst` | Individual hysteresis methods API reference |
+| `license.rst` | CC-BY 4.0 license information |
+| `citation.rst` | How to cite HyGCS and related papers |
+| `changelog.rst` | Version history and migration guide |
+| `requirements-docs.txt` | Documentation build dependencies |
+| `Makefile` | Build automation for local development |
+| `README.md` | Documentation build instructions |
 
 ##  Examples & Tests
 
 ### Examples (`examples/`)
 
-1. **demo_comprehensive_hysteresis_analysis.ipynb**
+1. **demo_gcs_core_function.ipynb**
    - Comprehensive demo of HARP, Zuecco, Lloyd methods
    - Event-scale hysteresis analysis
    - CVc/CVq variability analysis (Musolff framework)
@@ -104,7 +125,7 @@ HyGCS/
    - Multi-site, multi-compound analysis
    - Phase sequence visualization
    - Diagnostic plots
-   - **Focus**: GCS time series classification
+   - **Focus**: Functionality test and GCS time series classification
 
 ### 
 ## Scientific Methods Implemented
@@ -239,6 +260,7 @@ Recommended: 50+ points covering multiple cycles
   year = {2025},
   version = {0.5},
   url = {https://github.com/cojacoo/HyGCS}
+  doi = {https://doi.org/10.5281/zenodo.18462821}
 }
 ```
 

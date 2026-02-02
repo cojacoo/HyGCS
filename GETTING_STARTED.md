@@ -2,13 +2,15 @@
 
 Welcome to the **Hydro-Geochemical Classification Suite**! This guide will get you up and running quickly.
 
+The easiest way to start is heading to the jupyter notebooks under ``./examples/`` after installing (or copying) the package.
+
 ---
 
 ## Installation
 
 ### Option 1: Install from source
 ```bash
-git clone https://github.com/yourusername/HyGCS.git
+git clone https://github.com/cojacoo/HyGCS.git
 cd HyGCS
 pip install -e .
 ```
@@ -32,12 +34,12 @@ import pandas as pd
 
 # Load your event data
 # Needs: time column, discharge (Q), concentration (C)
-data = pd.read_csv('storm_event.csv')
+data = pd.read_csv('storm_event.csv') #replace file name with your file
 
 # Calculate all three hysteresis methods at once
 metrics = gcs.calculate_all_hysteresis_metrics(
     data,
-    time_col='datetime',
+    time_col='datetime', #adjust column names
     discharge_col='Q_Ls',
     concentration_col='NO3_mgL'
 )
@@ -52,9 +54,9 @@ print("Direction:", metrics['classifications']['lloyd_direction'])
 ### 2. Visualize the Event
 
 ```python
-from harp import calculate_harp_metrics, harp_plot
-from zuecco import calculate_zuecco_metrics, zuecco_plot
-from lloyd import calculate_lawlerlloyd_metrics, lloyd_plot
+from hygcs.harp import calculate_harp_metrics, harp_plot
+from hygcs.zuecco import calculate_zuecco_metrics, zuecco_plot
+from hygcs.lloyd import calculate_lawlerlloyd_metrics, lloyd_plot
 
 # Calculate with full output for plotting
 harp_m, harp_df = calculate_harp_metrics(data, time_col='datetime',
@@ -72,13 +74,13 @@ For long-term monitoring data with multiple cycles:
 
 ```python
 # Load monitoring time series
-pcd = pd.read_csv('monitoring_data.csv')
+pcd = pd.read_csv('monitoring_data.csv') #adjust to your data
 pcd['date'] = pd.to_datetime(pcd['date'])
 
 # Classify geochemical phases
 classified = gcs.classify_geochemical_phase(
     pcd,
-    sites=['Site1', 'Site2', 'Site3'],
+    sites=['Site1', 'Site2', 'Site3'], #Your sites
     ccol='PLI',        # Your concentration column
     qcol='Q_mLs',      # Your flow column
     use_highres=False  # Set True if you have hourly Q data
@@ -93,7 +95,7 @@ print(classified[['site_id', 'start_date', 'end_date',
 
 ```python
 # Create phase timeline
-fig = gcs.create_phase_sequence_plot(classified, sites=['Site1', 'Site2'])
+fig = gcs.create_phase_sequence_plot(classified, sites=['Site1', 'Site2']) #again, adjust to your sites
 fig.show()
 
 # Create diagnostic plot
@@ -266,31 +268,9 @@ fig.show()
 
 ---
 
-## Next Steps
-
-1. **Run Examples**:
-   ```bash
-   jupyter notebook examples/demo_comprehensive_hysteresis_analysis.ipynb
-   jupyter notebook examples/test_gcs.ipynb
-   ```
-
-2. **Read Documentation**:
-   - [API Reference](docs/API_REFERENCE.md) - Function details
-   - [Restructuring Notes](docs/RESTRUCTURING_v0.5.md) - Version history
-
-3. **Explore Methods**:
-   - Try all three hysteresis methods on same data
-   - Compare results for convergent evidence
-   - Use diagnostic plots to validate classification
-
----
-
 ## Getting Help
 
 - **Examples**: Check `examples/` directory
-- **Issues**: [GitHub Issues](https://github.com/yourusername/HyGCS/issues)
+- **Issues**: [GitHub Issues](https://github.com/cojacoo/HyGCS/issues)
 - **Email**: conrad.jackisch@tbt.tu-freiberg.de
 
----
-
-Happy analyzing! 🎉
