@@ -15,8 +15,9 @@ BibTeX
      author = {Jackisch, Conrad and Sanchez, Anita},
      title = {HyGCS: Hydro-Geochemical Classification Suite},
      year = {2025},
-     version = {0.5},
+     version = {0.5.1},
      url = {https://github.com/cojacoo/HyGCS},
+     doi = {https://doi.org/10.5281/zenodo.18462821}
      license = {CC-BY-4.0}
    }
 
@@ -173,10 +174,8 @@ Publications using or related to HyGCS methods:
 
 **In Review:**
 
-- Sanchez, A. et al. (2025). Geochemical phase classification in legacy mine drainage
-  systems. *In review*.
-
-**To Be Added:**
+- Sanchez, A. et al. (2025). Hotspots and hot moments of metal mobilization: dynamic connectivity 
+in legacy mine waters. *In review* EGUsphere, https://doi.org/10.5194/egusphere-2025-4092
 
 If you publish work using HyGCS, please let us know so we can add it here!
 
