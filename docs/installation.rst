@@ -34,11 +34,11 @@ Installation from Source
 
 Clone the repository and install in development mode::
 
-    git clone https://github.com/yourusername/HyGCS.git
+    git clone https://github.com/cojacoo/HyGCS.git
     cd HyGCS
     pip install -e .
 
-This will install HyGCS along with all required dependencies.
+This will install HyGCS along with all required dependencies. It also works with uv pip...
 
 Alternative: Install Dependencies Only
 --------------------------------------
@@ -57,14 +57,9 @@ Test that the package installed correctly::
 
     python -c "import hygcs as gcs; print(gcs.__version__)"
 
-This should print ``0.5`` without errors.
+This should currently print ``0.5`` without errors.
 
-Run the test suite::
-
-    cd tests/
-    python test_imports_v05.py
-
-All tests should pass with no errors.
+Run the test notebooks in ``./example/*.ipynb``. They should use the provided dummy files and should run without errors.
 
 Troubleshooting
 ---------------
