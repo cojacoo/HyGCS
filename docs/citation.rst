@@ -16,7 +16,7 @@ BibTeX
      title = {HyGCS: Hydro-Geochemical Classification Suite},
      year = {2025},
      version = {0.5},
-     url = {https://github.com/yourusername/HyGCS},
+     url = {https://github.com/cojacoo/HyGCS},
      license = {CC-BY-4.0}
    }
 
@@ -24,7 +24,7 @@ Text
 ~~~~
 
    Jackisch, C. and Sanchez, A. (2025). HyGCS: Hydro-Geochemical Classification Suite
-   (Version 0.5). https://github.com/yourusername/HyGCS
+   (Version 0.5). https://github.com/cojacoo/HyGCS
 
 Methodology Papers
 ------------------
@@ -188,7 +188,7 @@ Data Availability Statement
 Example text for data availability sections:
 
    "Hysteresis analysis was performed using HyGCS v0.5, available at
-   https://github.com/yourusername/HyGCS under CC-BY 4.0 license."
+   https://github.com/cojacoo/HyGCS under CC-BY 4.0 license."
 
 Acknowledgments
 ---------------
